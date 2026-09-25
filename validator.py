@@ -11,6 +11,19 @@ def validate_phone(phone: str) -> bool:
     pattern = r'^\+?7\d{10}$'
     return bool(re.match(pattern, phone.replace('-', '').replace(' ', '')))
 
-def validate_inn(inn: str) -> bool:
-    """TODO: валидация ИНН."""
-    pass
+def validate_snils(snils: str) -> bool:
+    """Валидация СНИЛС."""
+    import re
+    cleaned = snils.replace('-', '').replace(' ', '')
+    if not re.match(r'^\d{11}$', cleaned):
+        return False
+    numbers = [int(d) for d in cleaned[:9]]
+    check_sum = int(cleaned[9:11])
+    calculated = sum((9 - i) * numbers[i] for i in range(9))
+    if calculated < 100:
+        expected = calculated
+    elif calculated % 101 == 100:
+        expected = 0
+    else:
+        expected = calculated % 101
+    return expected == check_sum
