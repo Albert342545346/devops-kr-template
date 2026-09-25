@@ -5,7 +5,6 @@ def validate_phone(phone: str) -> bool:
     return bool(re.match(pattern, phone.replace('-', '').replace(' ', '')))
 
 
-# validator.py
 def validate_email(email: str) -> bool:
     """Валидация email-адреса."""
     import re
