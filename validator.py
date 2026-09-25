@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 def validate_phone(phone: str) -> bool:
     """Валидация номера телефона РФ."""
     import re
