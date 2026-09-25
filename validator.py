@@ -1,6 +1,12 @@
+def validate_phone(phone: str) -> bool: 
+    """‚ «Ё¤ жЁп а бЁ©бЄ®Ј® ­®¬Ґа  вҐ«Ґд®­ .""" 
+    import re 
+    pattern = r'\+?7\d{10}$' 
+    return bool(re.match(pattern, phone.replace('-', '').replace(' ', ''))) 
+ 
 # validator.py
 def validate_email(email: str) -> bool:
-    """Р’Р°Р»РёРґР°С†РёСЏ email-Р°РґСЂРµСЃР°."""
+    """Валидация российского номера телефона."""
     import re
     pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return bool(re.match(pattern, email))
