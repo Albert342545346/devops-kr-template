@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # validator.py
 def validate_phone(phone: str) -> bool:
     """Валидация российского номера телефона."""
@@ -7,13 +6,6 @@ def validate_phone(phone: str) -> bool:
     return bool(re.match(pattern, phone.replace('-', '').replace(' ', '')))
 
 
-def validate_email(email: str) -> bool:
-    """Валидация email-адреса."""
-    import re
-    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-    return bool(re.match(pattern, email))
-=======
-# validator.py
 def validate_email(email: str) -> bool:
     """Валидация email-адреса."""
     import re
@@ -52,4 +44,4 @@ def validate_snils(snils: str) -> bool:
         expected = calculated % 101
     
     return expected == check_sum
->>>>>>> upstream/feature/instructor-change
+
