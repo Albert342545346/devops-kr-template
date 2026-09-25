@@ -4,4 +4,7 @@ def validate_email(email: str) -> bool:
     import re
     pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
     return bool(re.match(pattern, email))
-
+# Проверка российского номера телефона
+def validate_phone(phone):
+    phone = phone.replace(" ", "")
+    return phone.startswith("+7") and len(phone) == 12 and phone[1:].isdigit()
